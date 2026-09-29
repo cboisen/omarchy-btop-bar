@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "cboisen.btop-bar",
+  "name": "btop bar",
+  "version": "1.0.0",
+  "author": "Christoffer Berg Boisen",
+  "license": "MIT",
+  "description": "Load average, RAM usage, and free disk space in the Omarchy bar",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BtopBar.qml"
+  },
+  "barWidget": {
+    "displayName": "System stats",
+    "description": "Load average, RAM usage, and free disk space, with network rates in the tooltip. Click opens btop.",
+    "category": "System",
+    "allowMultiple": true,
+    "defaultSection": "right",
+    "defaults": {
+      "interval": 5,
+      "items": [],
+      "interfaces": ""
+    },
+    "schema": [
+      {
+        "key": "interval",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 1,
+        "max": 60,
+        "step": 1,
+        "defaultValue": 5
+      },
+      {
+        "key": "items",
+        "type": "multiselect",
+        "label": "Metrics",
+        "description": "Choose which metrics to show. Leave empty to show all.",
+        "noSelectionText": "All metrics",
+        "placeholderText": "Search metrics...",
+        "emptyText": "No metrics",
+        "options": [
+          { "value": "load", "label": "Load average", "description": "1-minute load average" },
+          { "value": "ram", "label": "RAM", "description": "Used memory percentage" },
+          { "value": "disk", "label": "Disk", "description": "Free space on /" }
+        ],
+        "defaultValue": []
+      },
+      {
+        "key": "interfaces",
+        "type": "string",
+        "label": "Network interfaces",
+        "description": "Comma separated interface names to count for the tooltip network rates. Leave empty to count every physical interface.",
+        "defaultValue": ""
+      }
+    ]
+  }
+}
