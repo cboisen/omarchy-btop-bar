@@ -1,9 +1,7 @@
 # Omarchy btop bar
 Status monitor for Omarchy. Just the bare metrics to know how your machine is doing.
 
-```
-󰓅 3.21  󰍛 61%  󰋊 77G
-```
+![btop bar in the Omarchy top bar](screenshot.png)
 
 A bar widget for the Omarchy shell that shows:
 
